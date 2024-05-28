@@ -10,7 +10,7 @@ import { theme } from "@/styles/theme";
 
 import AppLoading from "@/components/AppLoading";
 
-import { HomeScreen } from "@/screens/Home";
+import { Routes } from "@/routes";
 
 export default function App() {
   const [fontsLoading] = useFonts({
@@ -25,7 +25,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {fontsLoading ? <HomeScreen /> : <AppLoading />}
+      {fontsLoading ? <Routes /> : <AppLoading />}
     </ThemeProvider>
   );
 }
