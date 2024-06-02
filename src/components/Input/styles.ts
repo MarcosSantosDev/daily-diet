@@ -17,13 +17,14 @@ export const Label = styled.Text`
   `}
 `;
   
-export const Input = styled.TextInput.attrs(({ theme }) => ({
+export const Input = styled.TextInput.attrs(({ theme, multiline }) => ({
   cursorColor: theme.colors.gray['1'],
   placeholderTextColor: theme.colors.gray['3'],
+  textAlignVertical: multiline ? 'top' : 'center',
 }))<{ isFocused: boolean }>`
   ${({ theme, isFocused }) => css`
     width: 100%;
-    height: 48px; 
+    max-height: 120px;
     padding: 14px;
 
     font-size: ${theme.font.size.MD}px;
