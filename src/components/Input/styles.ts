@@ -1,9 +1,5 @@
 import styled, { css } from 'styled-components/native';
 
-export type RadioButtonVariantStyledProps = 'positive' | 'negative';
-
-export type RadioButtonStateStyledProps = 'default' | 'active';
-
 export const Container = styled.View`
   width: 100%;
   gap: 8px;
