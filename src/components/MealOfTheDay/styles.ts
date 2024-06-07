@@ -8,6 +8,7 @@ export type MealOfTheDayStyledProps = {
 
 export const Container = styled.View`
   ${({ theme }) => css`
+    width: 100%;
     flex-direction: row;
     align-items: center;
     gap: 12px;
