@@ -3,8 +3,9 @@ import { Pressable } from 'react-native';
 import DateTimePicker, { AndroidNativeProps, DateTimePickerEvent }  from '@react-native-community/datetimepicker';
 import { format, isDate } from 'date-fns';
 
+import { Input } from '@/components/form/Input';
+
 import * as S from './styles';
-import { Input } from '@/components/Input';
 
 type DateInputProps = {
   label: string;

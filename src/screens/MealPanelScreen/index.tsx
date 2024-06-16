@@ -1,22 +1,16 @@
-import { Button } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { House } from 'phosphor-react-native';
+import { House } from "phosphor-react-native";
 
-import * as S from './styles';
+import * as S from "./styles";
+import { View } from "react-native";
 
 export const MealPanelScreen = () => {
-  const navigation = useNavigation()
-
   return (
     <S.Container>
-      <House size={32} weight='fill' />
-      <S.Text>
-        Página inicial
-      </S.Text>
-      <Button
-        title="Cadastrar nova refeição"
-        onPress={() => navigation.navigate('MealRegistration')}
-      />
+      <House size={32} weight="fill" />
+      <S.Text>Página inicial</S.Text>
+      <View style={{ gap: 8 }}>
+        {/*  */}
+      </View>
     </S.Container>
   );
 };

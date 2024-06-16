@@ -47,7 +47,7 @@ const buttonTextVariantStyles = (theme: DefaultTheme, variant: ButtonVariantStyl
 
 export const ButtonText = styled(Text) <{ variant: ButtonVariantStyledProps }>`
   ${({ theme }) => css`
-    font-size: ${theme.font.size.MD}px;
+    font-size: ${theme.font.size.SM}px;
     font-family: ${theme.font.family.BOLD};
   `}
 

@@ -9,8 +9,6 @@ type ButtonProps = TouchableHighlightProps & {
 }
 
 export const Button = ({ variant = 'primary', iconName, children, ...restProps }: ButtonProps) => {
-
-
   return (
     <S.Button variant={variant} {...restProps}>
       <S.ButtonContent>

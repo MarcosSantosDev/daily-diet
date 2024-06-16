@@ -6,11 +6,10 @@ import {
   NunitoSans_700Bold,
 } from "@expo-google-fonts/nunito-sans";
 
-import { theme } from "@/styles/theme";
-
-import AppLoading from "@/components/AppLoading";
-
 import { Routes } from "@/routes";
+import { theme } from "@/styles/theme";
+import AppLoading from "@/components/ui/AppLoading";
+
 
 export default function App() {
   const [fontsLoading] = useFonts({
