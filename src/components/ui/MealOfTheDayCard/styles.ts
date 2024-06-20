@@ -1,9 +1,9 @@
 import styled, { DefaultTheme, css } from "styled-components/native"
 
-export type MealOfTheDayVariantStyledProps = 'positive' | 'negative';
+export type MealOfTheDayCardVariantStyledProps = 'positive' | 'negative';
 
-export type MealOfTheDayStyledProps = {
-  variant: MealOfTheDayVariantStyledProps;
+export type MealOfTheDayCardStyledProps = {
+  variant: MealOfTheDayCardVariantStyledProps;
 };
 
 export const Container = styled.View`
@@ -39,7 +39,7 @@ export const TextValue = styled.Text`
   `}
 `;
 
-const statusIndicatorVariantStyles = (theme: DefaultTheme, variant: MealOfTheDayVariantStyledProps) =>
+const statusIndicatorVariantStyles = (theme: DefaultTheme, variant: MealOfTheDayCardVariantStyledProps) =>
   ({
     positive: css`
       background-color: ${theme.colors.green['2']};
@@ -49,7 +49,7 @@ const statusIndicatorVariantStyles = (theme: DefaultTheme, variant: MealOfTheDay
     `,
   }[variant]);
 
-export const StatusIndicator = styled.View<MealOfTheDayStyledProps>`
+export const StatusIndicator = styled.View<MealOfTheDayCardStyledProps>`
   width: 14px;
   height: 14px;
   border-radius: 20px;
