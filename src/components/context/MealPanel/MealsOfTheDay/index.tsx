@@ -1,6 +1,7 @@
-import MealOfTheDayCard from "@/components/ui/MealOfTheDayCard";
 import { formatDateSeparetedByDots } from "@/utils/formatDate";
 import type { MealsOfTheDayType } from "@/@types/screen/meals";
+
+import MealOfTheDayCard from "../MealOfTheDayCard";
 
 import * as S from "./styles";
 

@@ -1,6 +1,6 @@
 import { FlatList } from "react-native";
 
-import MealsOfTheDay from "@/components/context/MealsOfTheDay";
+import { MealsOfTheDay } from "@/components/context/MealPanel";
 import type { MealsOfTheDayType } from "@/@types/screen/meals";
 
 type MealsProps = {
