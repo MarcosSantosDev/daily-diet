@@ -23,13 +23,13 @@ export const Image = styled.Image`
   `}
 `;
 
-export const FormActionContainer = styled.View`
+export const ActionContent = styled.View`
   ${({ theme }) => css`
     gap: 10px;
   `}
 `;
 
-export const FormActionTitle = styled.Text`
+export const ActionTitle = styled.Text`
   ${({ theme }) => css`
     color: ${theme.colors.gray[1]};
     font-family: ${theme.font.family.REGULAR};

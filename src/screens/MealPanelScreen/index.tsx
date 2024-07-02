@@ -6,8 +6,15 @@ import Meals from "./components/Meals";
 
 import * as S from "./styles";
 import { Button } from "@/components/ui/Button";
+import { useNavigation } from "@react-navigation/native";
 
 export const MealPanelScreen = () => {
+  const navigation = useNavigation();
+
+  const navigateToMealRegistration = () => {
+    navigation.navigate('MealRegistration');
+  }
+
   return (
     <S.Container>
       <S.HeaderContainer>
@@ -17,15 +24,16 @@ export const MealPanelScreen = () => {
 
       <StatisticPanel percentage={mealPanelScreenMock.generalPercentage} />
 
-      <S.FormActionContainer>
-        <S.FormActionTitle>Refeições</S.FormActionTitle>
+      <S.ActionContent>
+        <S.ActionTitle>Refeições</S.ActionTitle>
         <Button
           iconName="add"
           variant="primary"
+          onPress={navigateToMealRegistration}
         >
           Nova refeição
         </Button>
-      </S.FormActionContainer>
+      </S.ActionContent>
 
       <Meals data={mealPanelScreenMock.meals} />
     </S.Container>

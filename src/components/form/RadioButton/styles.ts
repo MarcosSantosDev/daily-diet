@@ -16,7 +16,7 @@ const radioButtonContainerVariantStyles = (theme: DefaultTheme, { variant, state
     background-color: ${theme.colors.gray['6']};
   `,
   active: css`
-    border-width: 1;
+    border-width: 1px;
     border-style: solid;
     border-color: ${variant === 'positive' ? theme.colors.green['1'] : theme.colors.red['1']};
     background-color: ${variant === 'positive' ? theme.colors.green['3'] : theme.colors.red['3']};
@@ -24,7 +24,7 @@ const radioButtonContainerVariantStyles = (theme: DefaultTheme, { variant, state
 }[state]);
 
 export const RadioButton = styled(TouchableOpacity)<RadioButtonStyledProps>`
-  width: 100%;
+  flex: 1;
   flex-direction: row;
   justify-content: center;
   align-items: center;
