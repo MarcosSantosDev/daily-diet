@@ -7,7 +7,7 @@ export const Container = styled(SafeAreaView)`
   background-color: ${({ theme }) => theme.colors.gray[5]}; 
 `;
 
-export const NewMealHeaderContainer = styled.View`
+export const HeaderContainer = styled.View`
   ${({ theme }) => css`
     position: relative;
     padding: 28px 0px;
@@ -32,7 +32,7 @@ export const ArrowLeftIcon = styled(ArrowLeft).attrs(({ theme }) => ({
   top: 20px;
 `
 
-export const NewMealHeaderTitle = styled.Text`
+export const HeaderTitle = styled.Text`
   ${({ theme }) => css`
     text-align: center;
     font-family: ${theme.font.family.BOLD};

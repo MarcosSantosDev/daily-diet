@@ -8,10 +8,17 @@ import { Button } from '@/components/ui/Button';
 
 import * as S from './styles';
 
-export const MealRegistrationScreen = () => {
+const editMealMocked = {
+  name: 'Sanduíche',
+  description: 'Sanduíche',
+  dateTime: new Date(),
+  dietStatus: 'positive'
+}
+
+export const MealEditScreen = () => {
   const navigation = useNavigation()
 
-  const [dietRadioButton, setDietRadioButton] = useState(false);
+  const [dietRadioButton, setDietRadioButton] = useState(editMealMocked.dietStatus === 'positive');
   
   const handleGoToMealPanel = () => navigation.navigate('MealPanel')
 
@@ -19,20 +26,20 @@ export const MealRegistrationScreen = () => {
 
   return (
     <S.Container>
-      <S.NewMealHeaderContainer>
+      <S.HeaderContainer>
         <S.IconPressable onPress={handleGoToMealPanel}>
           <S.ArrowLeftIcon />
         </S.IconPressable>
-        <S.NewMealHeaderTitle>Nova refeição</S.NewMealHeaderTitle>
-      </S.NewMealHeaderContainer>
+        <S.HeaderTitle>Editar refeição</S.HeaderTitle>
+      </S.HeaderContainer>
 
       <S.FormContainer>
         <S.FieldsContent>
-          <Input label='Nome' />
-          <Input label='Descrição' multiline numberOfLines={5} />        
+          <Input label='Nome' value={editMealMocked.name} />
+          <Input label='Descrição' multiline numberOfLines={5} value={editMealMocked.description} />        
           <S.DateInputsContent>
-            <DateInput label='Data' mode='date' />
-            <DateInput label='Hora' mode='time' />
+            <DateInput label='Data' mode='date' dateValue={new Date()} />
+            <DateInput label='Hora' mode='time' dateValue={new Date()} />
           </S.DateInputsContent>
           <S.RadioButtonsContent>
             <S.RadioButtonsLabel>Está dentro da dieta?</S.RadioButtonsLabel>
@@ -59,7 +66,7 @@ export const MealRegistrationScreen = () => {
           </S.RadioButtonsContent>
         </S.FieldsContent>
   
-        <Button variant='primary' onPress={handleGoToRegistrationFeedback}>Cadastrar refeição</Button>
+        <Button variant='primary' onPress={handleGoToRegistrationFeedback}>Salvar alterações</Button>
       </S.FormContainer>
     </S.Container>
   );

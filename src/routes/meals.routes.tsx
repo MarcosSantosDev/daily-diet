@@ -2,7 +2,8 @@ import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { MealPanelScreen } from '@/screens/MealPanelScreen'
-import { MealRegistrationScreen } from '@/screens/MealRegistrationScreen'
+import { MealRegistrationScreen } from '@/screens/Meal/MealRegistrationScreen'
+import { MealEditScreen } from '@/screens/Meal/MealEditScreen'
 import { RegistrationFeedbackScreen } from '@/screens/RegistrationFeedbackScreen'
 import { MealDetailsScreen } from '@/screens/MealDetailsScreen'
 
@@ -14,6 +15,7 @@ export const DietsRoutes = () => {
       <Stack.Screen name="MealPanel" component={MealPanelScreen} />
       <Stack.Screen name="MealDetails" component={MealDetailsScreen} />
       <Stack.Screen name="MealRegistration" component={MealRegistrationScreen} />
+      <Stack.Screen name="MealEditScreen" component={MealEditScreen} />
       <Stack.Screen name="RegistrationFeedback" component={RegistrationFeedbackScreen} />
     </Stack.Navigator>
   );

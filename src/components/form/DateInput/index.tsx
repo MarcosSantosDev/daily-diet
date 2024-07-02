@@ -10,10 +10,11 @@ import * as S from './styles';
 type DateInputProps = {
   label: string;
   mode: AndroidNativeProps['mode'];
+  dateValue?: Date | null;
 };
 
-export const DateInput = ({ label, mode = 'date' }: DateInputProps) => { 
-  const [date, setDate] = React.useState<Date | null>(null);
+export const DateInput = ({ label, mode = 'date', dateValue = null }: DateInputProps) => { 
+  const [date, setDate] = React.useState<Date | null>(dateValue);
   const [show, setShow] = React.useState(false);
 
   const onChange = (event: DateTimePickerEvent, selectedDate?: Date) => {
