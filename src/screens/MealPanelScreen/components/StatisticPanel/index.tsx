@@ -1,4 +1,5 @@
 import { formatPercentage } from '@/utils/formatNumber';
+import { useNavigation } from '@react-navigation/native';
 
 import * as S from './styles';
 
@@ -7,8 +8,10 @@ type StatisticPanelProps = {
 }
 
 const StatisticPanel = ({ percentage }: StatisticPanelProps) => {
+  const navigation = useNavigation();
+
   const goToResumeOfStatisticPanel = () =>{
-    console.log('ResumeOfStatisticPanel')
+    navigation.navigate('MealDetails')
   }
 
   return (

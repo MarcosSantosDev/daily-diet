@@ -12,9 +12,9 @@ export const DietsRoutes = () => {
   return (
     <Stack.Navigator initialRouteName='MealPanel' screenOptions={{ headerShown: false }}>
       <Stack.Screen name="MealPanel" component={MealPanelScreen} />
+      <Stack.Screen name="MealDetails" component={MealDetailsScreen} />
       <Stack.Screen name="MealRegistration" component={MealRegistrationScreen} />
       <Stack.Screen name="RegistrationFeedback" component={RegistrationFeedbackScreen} />
-      <Stack.Screen name="MealDetails" component={MealDetailsScreen} />
     </Stack.Navigator>
   );
 };

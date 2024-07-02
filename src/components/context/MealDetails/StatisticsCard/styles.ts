@@ -1,4 +1,4 @@
-import { Text, View } from "react-native";
+import { View } from "react-native";
 import styled, { DefaultTheme, css } from "styled-components/native"
 
 export type StatisticsCardVariantStyledProps = 'default' | 'positive' | 'negative';
@@ -21,8 +21,8 @@ const containerVariantStyles = (theme: DefaultTheme, variant: StatisticsCardVari
   }[variant]);
 
 export const Container = styled(View)<StatisticsCardStyledProps>`
+  flex: 1;
   gap: 8px;
-
   padding: 16px;
   border-radius: 8px;
   align-items: center;
@@ -30,25 +30,19 @@ export const Container = styled(View)<StatisticsCardStyledProps>`
   ${({ theme, variant }) => containerVariantStyles(theme, variant)}
 `;
 
-
-export const TextTitle = styled(Text)`
+export const TextTitle = styled.Text`
   ${({ theme }) => css`
     color: ${theme.colors.gray[1]};
     font-family: ${theme.font.family.BOLD};
     font-size: ${theme.font.size.X_LARGE}px;
-
-    inline-size: 90%;
-    overflow-wrap: break-word;
   `}
 `;
 
-export const TextSubTitle = styled(Text)`
+export const TextSubTitle = styled.Text`
   ${({ theme }) => css`
+    text-align: center;
     color: ${theme.colors.gray[1]};
     font-family: ${theme.font.family.REGULAR};
     font-size: ${theme.font.size.SM}px;
-
-    inline-size: 90%;
-    overflow-wrap: break-word;
   `}
 `;
