@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View } from "react-native";
 import Modal from "react-native-modal";
 
-import { Button } from "../Button";
+import { Button } from "@/components/ui/Button";
 
 type ConfirmationDialogProps = {
   openDialog: boolean;

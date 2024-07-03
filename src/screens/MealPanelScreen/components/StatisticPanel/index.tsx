@@ -11,7 +11,7 @@ const StatisticPanel = ({ percentage }: StatisticPanelProps) => {
   const navigation = useNavigation();
 
   const goToResumeOfStatisticPanel = () =>{
-    navigation.navigate('MealDetails')
+    navigation.navigate('MealDetailsScreen')
   }
 
   return (

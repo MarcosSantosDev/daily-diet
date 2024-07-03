@@ -6,7 +6,7 @@ export type MealOfTheDayCardStyledProps = {
   variant: MealOfTheDayCardVariantStyledProps;
 };
 
-export const Container = styled.View`
+export const Container = styled.Pressable`
   ${({ theme }) => css`
     width: 100%;
     flex-direction: row;

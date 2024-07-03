@@ -9,11 +9,9 @@ type MealVariant = "positive" | "negative"
 export const MealDetailsScreen = () => {
   const navigation = useNavigation()
 
-  const backToMealsPanel = () => {
-    navigation.navigate('MealPanel');
-  }
+  const backToMealsPanel = () => navigation.navigate('MealPanelScreen');
 
-  const variant: MealVariant = 'negative'
+  const variant: MealVariant = 'positive';
 
   return (
     <S.Container variant={variant}>

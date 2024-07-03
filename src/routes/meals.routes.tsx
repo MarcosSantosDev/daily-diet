@@ -1,22 +1,26 @@
 import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { MealPanelScreen } from '@/screens/MealPanelScreen'
-import { MealRegistrationScreen } from '@/screens/Meal/MealRegistrationScreen'
-import { MealEditScreen } from '@/screens/Meal/MealEditScreen'
-import { RegistrationFeedbackScreen } from '@/screens/RegistrationFeedbackScreen'
-import { MealDetailsScreen } from '@/screens/MealDetailsScreen'
+import { RootStackParamList } from '@/@types/app/navigation';
 
-const Stack = createNativeStackNavigator();
+import { MealPanelScreen } from '@/screens/MealPanelScreen'
+import { MealRegistrationScreen } from '@/screens/MealRegistrationScreen'
+import { MealEditScreen } from '@/screens/MealEditScreen'
+import { MealDetailsScreen } from '@/screens/MealDetailsScreen'
+import { MealSummaryScreen } from '@/screens/MealSummaryScreen';
+import { RegistrationFeedbackScreen } from '@/screens/RegistrationFeedbackScreen'
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export const DietsRoutes = () => {
   return (
-    <Stack.Navigator initialRouteName='MealPanel' screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="MealPanel" component={MealPanelScreen} />
-      <Stack.Screen name="MealDetails" component={MealDetailsScreen} />
-      <Stack.Screen name="MealRegistration" component={MealRegistrationScreen} />
+    <Stack.Navigator initialRouteName='MealPanelScreen' screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="MealPanelScreen" component={MealPanelScreen} />
+      <Stack.Screen name="MealDetailsScreen" component={MealDetailsScreen} />
+      <Stack.Screen name="MealRegistrationScreen" component={MealRegistrationScreen} />
       <Stack.Screen name="MealEditScreen" component={MealEditScreen} />
-      <Stack.Screen name="RegistrationFeedback" component={RegistrationFeedbackScreen} />
+      <Stack.Screen name="MealSummaryScreen" component={MealSummaryScreen} />
+      <Stack.Screen name="RegistrationFeedbackScreen" component={RegistrationFeedbackScreen} />
     </Stack.Navigator>
   );
 };

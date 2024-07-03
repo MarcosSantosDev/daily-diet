@@ -7,22 +7,31 @@ import { RadioButton } from '@/components/form/RadioButton';
 import { Button } from '@/components/ui/Button';
 
 import * as S from './styles';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { RootStackParamList } from '@/@types/app/navigation';
 
-const editMealMocked = {
+type EditMealMockedType = {
+  name: string;
+  description: string;
+  dateTime: Date;
+  dietStatus: 'positive' | 'negative';
+}
+
+const editMealMocked: EditMealMockedType = {
   name: 'Sanduíche',
   description: 'Sanduíche',
   dateTime: new Date(),
   dietStatus: 'positive'
 }
 
-export const MealEditScreen = () => {
-  const navigation = useNavigation()
-
-  const [dietRadioButton, setDietRadioButton] = useState(editMealMocked.dietStatus === 'positive');
+export const MealEditScreen = ({ route, navigation }: NativeStackScreenProps<RootStackParamList, 'MealEditScreen'>) => {
+  const [dietIsOk, setDietIsOk] = useState(editMealMocked.dietStatus === 'positive');
   
-  const handleGoToMealPanel = () => navigation.navigate('MealPanel')
+  const handleGoToMealPanel = () => navigation.goBack();
 
-  const handleGoToRegistrationFeedback = () => navigation.navigate('RegistrationFeedback')
+  const handleGoToRegistrationFeedback = () => navigation.navigate('RegistrationFeedbackScreen', {
+    feedback: dietIsOk ? 'positive' : 'negative'
+  });
 
   return (
     <S.Container>
@@ -30,7 +39,7 @@ export const MealEditScreen = () => {
         <S.IconPressable onPress={handleGoToMealPanel}>
           <S.ArrowLeftIcon />
         </S.IconPressable>
-        <S.HeaderTitle>Editar refeição</S.HeaderTitle>
+        <S.HeaderTitle>Refeição {route.params.mealId}</S.HeaderTitle>
       </S.HeaderContainer>
 
       <S.FormContainer>
@@ -47,18 +56,18 @@ export const MealEditScreen = () => {
               <RadioButton
                 variant='positive'
                 onPress={() => {
-                  setDietRadioButton(true);
+                  setDietIsOk(true);
                 }}
-                state={dietRadioButton ? 'active': 'default'}
+                state={dietIsOk ? 'active': 'default'}
               >
                 Sim
               </RadioButton>
               <RadioButton
                 variant='negative'
                 onPress={() => {
-                  setDietRadioButton(false);
+                  setDietIsOk(false);
                 }}
-                state={!dietRadioButton ? 'active': 'default'}
+                state={!dietIsOk ? 'active': 'default'}
               >
                 Não
               </RadioButton>

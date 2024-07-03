@@ -21,6 +21,7 @@ export const IconPressable = styled.Pressable`
   position: absolute;
   left: 10px;
   top: 10px;
+  z-index: 1;
 `
 
 export const ArrowLeftIcon = styled(ArrowLeft).attrs(({ theme }) => ({

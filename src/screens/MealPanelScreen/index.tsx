@@ -11,9 +11,7 @@ import { useNavigation } from "@react-navigation/native";
 export const MealPanelScreen = () => {
   const navigation = useNavigation();
 
-  const navigateToMealRegistration = () => {
-    navigation.navigate('MealRegistration');
-  }
+  const navigateToMealRegistration = () => navigation.navigate('MealRegistrationScreen');
 
   return (
     <S.Container>

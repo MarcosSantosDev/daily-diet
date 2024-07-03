@@ -7,4 +7,5 @@ export type MealOfTheDayType = {
 export type MealsOfTheDayType = {
   mealDate: Date;
   mealsOfTheDay: MealOfTheDayType[];
+  goToMealSummary: (id: string) => void;
 };

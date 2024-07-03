@@ -9,13 +9,15 @@ import { Button } from '@/components/ui/Button';
 import * as S from './styles';
 
 export const MealRegistrationScreen = () => {
-  const navigation = useNavigation()
+  const navigation = useNavigation();
 
-  const [dietRadioButton, setDietRadioButton] = useState(false);
+  const [dietIsOk, setDietIsOk] = useState(false);
   
-  const handleGoToMealPanel = () => navigation.navigate('MealPanel')
+  const handleGoToMealPanel = () => navigation.goBack();
 
-  const handleGoToRegistrationFeedback = () => navigation.navigate('RegistrationFeedback')
+  const handleGoToRegistrationFeedback = () => navigation.navigate('RegistrationFeedbackScreen', {
+    feedback: dietIsOk ? 'positive' : 'negative'
+  });
 
   return (
     <S.Container>
@@ -40,18 +42,18 @@ export const MealRegistrationScreen = () => {
               <RadioButton
                 variant='positive'
                 onPress={() => {
-                  setDietRadioButton(true);
+                  setDietIsOk(true);
                 }}
-                state={dietRadioButton ? 'active': 'default'}
+                state={dietIsOk ? 'active': 'default'}
               >
                 Sim
               </RadioButton>
               <RadioButton
                 variant='negative'
                 onPress={() => {
-                  setDietRadioButton(false);
+                  setDietIsOk(false);
                 }}
-                state={!dietRadioButton ? 'active': 'default'}
+                state={!dietIsOk ? 'active': 'default'}
               >
                 Não
               </RadioButton>
